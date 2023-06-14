@@ -51,6 +51,18 @@ services:
     networks:
       - ndsnet
 
+  airflow-scheduler:
+    build:
+      context: .
+      dockerfile: ./airflow/Dockerfile
+    env_file:
+      - './.env'
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+    command: airflow scheduler
+    networks:
+      - ndsnet
+
 networks:
   ndsnet:
     driver: bridge
