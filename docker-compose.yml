@@ -4,10 +4,8 @@ services:
     image: postgres
     hostname: postgres
     container_name: postgres
-    environment:
-      - POSTGRES_PASSWORD=onestack
-      - POSTGRES_USER=onestack
-      - POSTGRES_DB=onestack
+    env_file:
+      - .env
     ports:
       - '5432:5432'
     networks:
@@ -21,13 +19,26 @@ services:
   metabase:
     container_name: metabase
     depends_on:
-      - cube
+      - postgres
     hostname: metabase
     build: metabase/
     volumes:
       - ./conf/metabase:/conf
     ports:
       - 3030:3030
+    networks:
+      - ndsnet
+
+  airflow:
+    container_name: airflow
+    build: ./airflow  # Adjust the path to your Airflow Dockerfile
+    env_file:
+      - .env
+    ports:
+      - 8080:8080
+    volumes:
+      - ./dags:/opt/airflow/dags  # Adjust the path to your Airflow DAGs directory
+      - ./airflow/airflow.cfg:/opt/airflow/airflow.cfg  # Adjust the path to your Airflow configuration file
     networks:
       - ndsnet
 

@@ -37,23 +37,33 @@ To get started with One Stack, follow these steps:
    cd one-stack
    ```
 
-2. **Configure your environment:**
+2. **Install Poetry and dependencies**
+    ```bash
+    pip3 install poetry 
+
+    virtualenv .venv
+    . .venv/bin/activate
+
+    poetry install
+    ```
+
+3. **Configure your environment:**
 - Update the necessary configuration files according to your requirements.
 - Ensure you have the required credentials for services like AWS, Docker Hub, and others.
 
-3. **Set up infrastructure:**
+4. **Set up infrastructure:**
 - Use Terraform to provision the required infrastructure resources. Navigate to the `terraform` directory and follow the instructions in the README file.
 
-4. **Build and deploy Docker containers:**
+5. **Build and deploy Docker containers:**
 - Customize the Dockerfile and docker-compose.yml files in the `docker` directory based on your project needs.
 - Build and deploy the Docker containers by running the appropriate Docker commands.
 
-5. **Configure Airflow and dbt:**
+6. **Configure Airflow and dbt:**
 - Set up the Airflow configuration by modifying the airflow.cfg file in the `airflow` directory.
 - Create your Airflow DAGs in the `dags` directory and customize them according to your workflows.
 - Define your dbt models in the `dbt` directory and update the dbt_project.yml file accordingly.
 
-6. **Enable CI/CD with GitHub Workflows:**
+7. **Enable CI/CD with GitHub Workflows:**
 - Customize the `.github/workflows/ci_cd.yml` file to suit your CI/CD pipeline requirements.
 - Configure the necessary secrets in your GitHub repository settings for secure access to services.
 
