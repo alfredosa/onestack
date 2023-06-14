@@ -5,6 +5,8 @@
 </p>
 <p align="center">
 <em>The one Data Stack to rule them all. Deploy all you need for your data project, in open source fashion 🚀🌐 A comprehensive project incorporating Metabase, Airflow, dbt, Docker, Terraform, and GitHub Workflows. </em>
+</p>
+<p align="center">
 <a href="https://github.com/alfredosa/onestack" target="_blank">
     <img src="https://img.shields.io/github/stars/alfredosa/onestack?style=social&label=Star&maxAge=2592000" alt="Test">
 </a>
