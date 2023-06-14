@@ -3,14 +3,31 @@
 <p align="center">
   <a href="https://fakerino.com"><img src="http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/d98dde45d242734.png" alt="Fakerino"></a>
 </p>
+<p align="center">
+    <em>The one Data Stack to rule them all. Deploy all you need for your data project, in open source fashion 🚀🌐 A comprehensive project incorporating Metabase, Airflow, dbt, Docker, Terraform, and GitHub Workflows. </em>
+</p>
 <a href="https://github.com/alfredosa/onestack" target="_blank">
     <img src="https://img.shields.io/github/stars/alfredosa/onestack?style=social&label=Star&maxAge=2592000" alt="Test">
 </a>
-[![Slack](https://img.shields.io/badge/Slack-Join-blue)](https://example.slack.com)
-[![Discord](https://img.shields.io/badge/Discord-Join-blueviolet)](https://discord.gg/example)
-[![Email](https://img.shields.io/badge/Email-Contact-red)](mailto:asuarezaceves@gmail.com)
-
-> A comprehensive project incorporating Airflow, dbt, Docker, Terraform, and GitHub Workflows.
+<a href="https://github.com/alfredosa/onestack/releases" target="_blank">
+    <img src="https://img.shields.io/github/v/release/alfredosa/onestack?color=white" alt="Release">
+</a>
+<a href="https://onestack.slack.com/" target="_blank">
+    <img src="https://img.shields.io/badge/slack-join-white.svg?logo=slack" alt="Slack">
+</a>
+<a href="https://www.youtube.com/c/OneStackHQ/?sub_confirmation=1" target="_blank">
+    <img alt="YouTube Channel Views" src="https://img.shields.io/youtube/channel/views/UCQ_JWEFzs1_INqdhIO3kmrw?style=social">
+</a>
+<a href="https://github.com/alfredosa/onestack/actions/workflows/gradle.yml" target="_blank">
+    <img src="https://img.shields.io/github/actions/workflow/status/alfredosa/onestack/gradle.yml?branch=master" alt="Build">
+</a>
+<a href="https://github.com/alfredosa/onestack/tree/master/docs/project-overview/licenses" target="_blank">
+    <img src="https://img.shields.io/static/v1?label=license&message=MIT&color=white" alt="License">
+</a>
+<a href="https://github.com/alfredosa/onestack/tree/master/docs/project-overview/licenses" target="_blank">
+    <img src="https://img.shields.io/static/v1?label=license&message=ELv2&color=white" alt="License">
+</a>
+</p>
 
 ## Description
 
