@@ -1,5 +1,11 @@
 # One Stack
 
+<p align="center">
+  <a href="https://fakerino.com"><img src="http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/d98dde45d242734.png" alt="Fakerino"></a>
+</p>
+<a href="https://github.com/alfredosa/onestack" target="_blank">
+    <img src="https://img.shields.io/github/stars/alfredosa/onestack?style=social&label=Star&maxAge=2592000" alt="Test">
+</a>
 [![Slack](https://img.shields.io/badge/Slack-Join-blue)](https://example.slack.com)
 [![Discord](https://img.shields.io/badge/Discord-Join-blueviolet)](https://discord.gg/example)
 [![Email](https://img.shields.io/badge/Email-Contact-red)](mailto:asuarezaceves@gmail.com)
@@ -21,7 +27,7 @@ To get started with One Stack, follow these steps:
    git clone https://github.com/your-username/one-stack.git
    cd one-stack
    ```
-   
+
 2. **Configure your environment:**
 - Update the necessary configuration files according to your requirements.
 - Ensure you have the required credentials for services like AWS, Docker Hub, and others.
