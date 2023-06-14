@@ -2,7 +2,7 @@
 
 [![Slack](https://img.shields.io/badge/Slack-Join-blue)](https://example.slack.com)
 [![Discord](https://img.shields.io/badge/Discord-Join-blueviolet)](https://discord.gg/example)
-[![Email](https://img.shields.io/badge/Email-Contact-red)](mailto:your-email@example.com)
+[![Email](https://img.shields.io/badge/Email-Contact-red)](mailto:asuarezaceves@gmail.com)
 
 > A comprehensive project incorporating Airflow, dbt, Docker, Terraform, and GitHub Workflows.
 
