@@ -1,5 +1,3 @@
-# One Stack
-
 <p align="center">
   <a href="https://onestack.alfreditus.corp"><img src="https://s3.eu-west-2.amazonaws.com/static.alfreditus.corp/logo-color.svg" alt="Fakerino" width="150" height="150"></a>
 </p>
