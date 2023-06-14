@@ -31,14 +31,14 @@ services:
 
   airflow:
     container_name: airflow
-    build: ./airflow  # Adjust the path to your Airflow Dockerfile
-    env_file:
-      - .env
+    build:
+      context: .
+      dockerfile: ./airflow/Dockerfile
     ports:
       - 8080:8080
     volumes:
-      - ./dags:/opt/airflow/dags  # Adjust the path to your Airflow DAGs directory
-      - ./airflow/airflow.cfg:/opt/airflow/airflow.cfg  # Adjust the path to your Airflow configuration file
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/airflow.cfg:/opt/airflow/airflow.cfg:ro
     networks:
       - ndsnet
 
