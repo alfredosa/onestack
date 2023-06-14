@@ -9,9 +9,6 @@
 <a href="https://github.com/alfredosa/onestack" target="_blank">
     <img src="https://img.shields.io/github/stars/alfredosa/onestack?style=social&label=Star&maxAge=2592000" alt="Test">
 </a>
-<a href="https://github.com/alfredosa/onestack/releases" target="_blank">
-    <img src="https://img.shields.io/github/v/release/alfredosa/onestack?color=white" alt="Release">
-</a>
 <a href="https://onestack.slack.com/" target="_blank">
     <img src="https://img.shields.io/badge/slack-join-white.svg?logo=slack" alt="Slack">
 </a>
