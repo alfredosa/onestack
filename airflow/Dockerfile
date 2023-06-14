@@ -36,4 +36,5 @@ COPY ./.env /opt/airflow/.env
 RUN chown -R airflow: /opt/airflow
 
 USER airflow
-ENTRYPOINT ["bash", "-c", "source /opt/airflow/.env && airflow db init && airflow webserver && airflow users create --username onestack --firstname One --lastname Stack --role Admin --email onestack@example.com --password onestack"]
+
+ENTRYPOINT ["bash", "-c", "source /opt/airflow/.env && airflow db init && airflow users create --username onestack --firstname One --lastname Stack --role Admin --email onestack@example.com --password onestack && airflow webserver"]
