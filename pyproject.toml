@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "onestack"
+version = "0.1.0"
+description = "The one Data Stack to rule them all. Deploy all you need for your data project, in open source fashion 🚀🌐"
+authors = ["Alfredo Suarez <31414624+alfredosa@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+dbt-postgres = "^1.5.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

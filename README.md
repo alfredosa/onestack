@@ -1,7 +1,7 @@
 # One Stack
 
 <p align="center">
-  <a href="https://onestack.alfreditus.corp"><img src="https://s3.eu-west-2.amazonaws.com/static.alfreditus.corp/logo-color.svg" alt="Fakerino" width="50" height="50"></a>
+  <a href="https://onestack.alfreditus.corp"><img src="https://s3.eu-west-2.amazonaws.com/static.alfreditus.corp/logo-color.svg" alt="Fakerino" width="150" height="150"></a>
 </p>
 <p align="center">
 <em>The one Data Stack to rule them all. Deploy all you need for your data project, in open source fashion 🚀🌐 A comprehensive project incorporating Metabase, Airflow, dbt, Docker, Terraform, and GitHub Workflows. </em>
