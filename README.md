@@ -1,7 +1,7 @@
 # One Stack
 
 <p align="center">
-  <a href="https://fakerino.com"><img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngwing.com%2Fen%2Ffree-png-ziovv&psig=AOvVaw3uZ16aK3mSaajGqkXV8Jif&ust=1686850209644000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCJCUwvGkw_8CFQAAAAAdAAAAABAJ" alt="Fakerino"></a>
+  <a href="https://fakerino.com"><img src="https://s3.eu-west-2.amazonaws.com/static.alfreditus.corp/logo-color.svg" alt="Fakerino"></a>
 </p>
 <p align="center">
     <em>The one Data Stack to rule them all. Deploy all you need for your data project, in open source fashion 🚀🌐 A comprehensive project incorporating Metabase, Airflow, dbt, Docker, Terraform, and GitHub Workflows. </em>
