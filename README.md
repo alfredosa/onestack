@@ -15,17 +15,11 @@
 <a href="https://onestack.slack.com/" target="_blank">
     <img src="https://img.shields.io/badge/slack-join-white.svg?logo=slack" alt="Slack">
 </a>
-<a href="https://www.youtube.com/c/OneStackHQ/?sub_confirmation=1" target="_blank">
-    <img alt="YouTube Channel Views" src="https://img.shields.io/youtube/channel/views/UCQ_JWEFzs1_INqdhIO3kmrw?style=social">
-</a>
-<a href="https://github.com/alfredosa/onestack/actions/workflows/gradle.yml" target="_blank">
-    <img src="https://img.shields.io/github/actions/workflow/status/alfredosa/onestack/gradle.yml?branch=master" alt="Build">
+<a href="https://www.youtube.com/watch?v=5ula1NjaHUA&ab_channel=PortalPostMalone" target="_blank">
+    <img alt="YouTube Channel Views" src="https://img.shields.io/youtube/channel/views/5ula1NjaHUA?style=social">
 </a>
 <a href="https://github.com/alfredosa/onestack/tree/master/docs/project-overview/licenses" target="_blank">
     <img src="https://img.shields.io/static/v1?label=license&message=MIT&color=white" alt="License">
-</a>
-<a href="https://github.com/alfredosa/onestack/tree/master/docs/project-overview/licenses" target="_blank">
-    <img src="https://img.shields.io/static/v1?label=license&message=ELv2&color=white" alt="License">
 </a>
 </p>
 
