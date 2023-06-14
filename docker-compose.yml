@@ -1,0 +1,36 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres
+    hostname: postgres
+    container_name: postgres
+    environment:
+      - POSTGRES_PASSWORD=onestack
+      - POSTGRES_USER=onestack
+      - POSTGRES_DB=onestack
+    ports:
+      - '5432:5432'
+    networks:
+      - ndsnet
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U onestack"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  metabase:
+    container_name: metabase
+    depends_on:
+      - cube
+    hostname: metabase
+    build: metabase/
+    volumes:
+      - ./conf/metabase:/conf
+    ports:
+      - 3030:3030
+    networks:
+      - ndsnet
+
+networks:
+  ndsnet:
+    driver: bridge
