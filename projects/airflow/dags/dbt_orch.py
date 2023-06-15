@@ -1,17 +1,25 @@
+from pendulum import datetime
+
 from airflow import DAG
-from airflow.operators.bash_operator import BashOperator
-from datetime import datetime, timedelta
+from airflow.operators.empty import EmptyOperator
+from cosmos.providers.dbt.task_group import DbtTaskGroup
 
-default_args = {
-    'owner': 'onestack@gmail.com',
-    'start_date': datetime(2023, 6, 14),
-    'retries': 3,
-    'retry_delay': timedelta(minutes=5)
-}
 
-with DAG('dbt_dag', default_args=default_args, schedule_interval=None) as dag:
-    dbt_task = BashOperator(
-        task_id='dbt_run',
-        bash_command='dbt run',
-        dag=dag
+with DAG(
+    dag_id="extract_dag",
+    start_date=datetime(2022, 11, 27),
+    schedule="@daily",
+):
+    e1 = EmptyOperator(task_id="pre_dbt")
+
+    dbt_tg = DbtTaskGroup(
+        dbt_project_name="onestack",
+        conn_id="postgres",
+        profile_args={
+            "schema": "public",
+        },
     )
+
+    e2 = EmptyOperator(task_id="post_dbt")
+
+    e1 >> dbt_tg >> e2

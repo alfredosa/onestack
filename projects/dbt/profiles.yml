@@ -1,0 +1,12 @@
+onestack:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: [hostname]
+      user: [username]
+      password: [password]
+      port: [port]
+      dbname: [database name] # or database instead of dbname
+      schema: [dbt schema]
+      threads: [optional, 1 or more]

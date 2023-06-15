@@ -558,6 +558,40 @@ typing-extensions = {version = ">=4", markers = "python_version < \"3.11\""}
 tests = ["mypy (>=0.800)", "pytest", "pytest-asyncio"]
 
 [[package]]
+name = "astronomer-cosmos"
+version = "0.7.3"
+description = "Render 3rd party workflows in Airflow"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "astronomer_cosmos-0.7.3-py3-none-any.whl", hash = "sha256:bd6ec5fdb1855cda47a664b23790140577887e9f7f7a2e2cbc70e08b6c84919e"},
+    {file = "astronomer_cosmos-0.7.3.tar.gz", hash = "sha256:35f2656e0a69e6f070699ae796796ce531fa1eea1ca079179e4c7648c3d7fdb5"},
+]
+
+[package.dependencies]
+apache-airflow = ">=2.3.0"
+dbt-postgres = {version = "*", optional = true, markers = "extra == \"dbt-postgres\""}
+jinja2 = ">=3.0.0"
+virtualenv = "*"
+
+[package.extras]
+all = ["astronomer-cosmos[dbt-all]"]
+dbt-all = ["astronomer-cosmos[dbt-openlineage]", "dbt-bigquery", "dbt-databricks", "dbt-exasol", "dbt-postgres", "dbt-redshift", "dbt-snowflake", "dbt-spark"]
+dbt-bigquery = ["dbt-bigquery"]
+dbt-databricks = ["dbt-databricks"]
+dbt-exasol = ["dbt-exasol"]
+dbt-openlineage = ["dbt-core", "openlineage-dbt (>=0.21.1)"]
+dbt-postgres = ["dbt-postgres"]
+dbt-redshift = ["dbt-redshift"]
+dbt-snowflake = ["dbt-snowflake"]
+dbt-spark = ["dbt-spark"]
+docker = ["apache-airflow-providers-docker (>=3.5.0)"]
+docs = ["pydata-sphinx-theme", "sphinx", "sphinx-autoapi", "sphinx-autobuild", "sphinx-tabs"]
+kubernetes = ["apache-airflow-providers-cncf-kubernetes (>=5.1.1)"]
+tests = ["mypy", "packaging", "pytest (>=6.0)", "pytest-cov", "pytest-describe", "pytest-dotenv", "pytest-split", "requests-mock", "sqlalchemy-stubs", "types-requests"]
+
+[[package]]
 name = "async-timeout"
 version = "4.0.2"
 description = "Timeout context manager for asyncio programs"
@@ -1159,6 +1193,18 @@ files = [
 graph = ["objgraph (>=1.7.2)"]
 
 [[package]]
+name = "distlib"
+version = "0.3.6"
+description = "Distribution utilities"
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "distlib-0.3.6-py2.py3-none-any.whl", hash = "sha256:f35c4b692542ca110de7ef0bea44d73981caeb34ca0b9b6b2e6d7790dda8f80e"},
+    {file = "distlib-0.3.6.tar.gz", hash = "sha256:14bad2d9b04d3a36127ac97f30b12a19268f211063d8f8ee4f47108896e11b46"},
+]
+
+[[package]]
 name = "dnspython"
 version = "2.3.0"
 description = "DNS toolkit"
@@ -1221,6 +1267,22 @@ files = [
 
 [package.extras]
 test = ["pytest (>=6)"]
+
+[[package]]
+name = "filelock"
+version = "3.12.2"
+description = "A platform independent file lock."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "filelock-3.12.2-py3-none-any.whl", hash = "sha256:cbb791cdea2a72f23da6ac5b5269ab0a0d161e9ef0100e653b69049a7706d1ec"},
+    {file = "filelock-3.12.2.tar.gz", hash = "sha256:002740518d8aa59a26b0c76e10fb8c6e15eae825d34b6fdf670333fd7b938d81"},
+]
+
+[package.extras]
+docs = ["furo (>=2023.5.20)", "sphinx (>=7.0.1)", "sphinx-autodoc-typehints (>=1.23,!=1.23.4)"]
+testing = ["covdefaults (>=2.3)", "coverage (>=7.2.7)", "diff-cover (>=7.5)", "pytest (>=7.3.1)", "pytest-cov (>=4.1)", "pytest-mock (>=3.10)", "pytest-timeout (>=2.1)"]
 
 [[package]]
 name = "flask"
@@ -3554,6 +3616,27 @@ socks = ["pysocks (>=1.5.6,!=1.5.7,<2.0)"]
 zstd = ["zstandard (>=0.18.0)"]
 
 [[package]]
+name = "virtualenv"
+version = "20.23.0"
+description = "Virtual Python Environment builder"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "virtualenv-20.23.0-py3-none-any.whl", hash = "sha256:6abec7670e5802a528357fdc75b26b9f57d5d92f29c5462ba0fbe45feacc685e"},
+    {file = "virtualenv-20.23.0.tar.gz", hash = "sha256:a85caa554ced0c0afbd0d638e7e2d7b5f92d23478d05d17a76daeac8f279f924"},
+]
+
+[package.dependencies]
+distlib = ">=0.3.6,<1"
+filelock = ">=3.11,<4"
+platformdirs = ">=3.2,<4"
+
+[package.extras]
+docs = ["furo (>=2023.3.27)", "proselint (>=0.13)", "sphinx (>=6.1.3)", "sphinx-argparse (>=0.4)", "sphinxcontrib-towncrier (>=0.2.1a0)", "towncrier (>=22.12)"]
+test = ["covdefaults (>=2.3)", "coverage (>=7.2.3)", "coverage-enable-subprocess (>=1)", "flaky (>=3.7)", "packaging (>=23.1)", "pytest (>=7.3.1)", "pytest-env (>=0.8.1)", "pytest-freezegun (>=0.4.2)", "pytest-mock (>=3.10)", "pytest-randomly (>=3.12)", "pytest-timeout (>=2.1)", "setuptools (>=67.7.1)", "time-machine (>=2.9)"]
+
+[[package]]
 name = "werkzeug"
 version = "2.3.6"
 description = "The comprehensive WSGI web application library."
@@ -3765,4 +3848,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "cf96cfae1fc374345055565935c24b6f997e2d76a23db4ff30a038c45eed9200"
+content-hash = "62e838b31a1a4aa1a2354f92d52a71e6cffdd1307870b4c3789da9733f38229f"
