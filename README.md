@@ -25,6 +25,10 @@ One Stack is a powerful project that combines the capabilities of Airflow, dbt, 
 
 This repository contains the necessary files and configurations to set up an end-to-end data engineering and deployment pipeline using popular tools and technologies.
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=alfredosa/onestack&type=Date)](https://star-history.com/#alfredosa/onestack&Date)
+
 ## Installation
 
 To get started with One Stack, follow these steps:
