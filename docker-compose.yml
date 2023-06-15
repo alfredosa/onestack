@@ -2,8 +2,9 @@ version: '3.9'
 
 x-common:
   &common
-  image: apache/airflow:latest
-  user: "${AIRFLOW_UID}:0"
+  build:
+    context: .
+    dockerfile: Dockerfile
   env_file:
     - .env
   volumes:
@@ -87,21 +88,9 @@ services:
     command:
       - -c
       - |
-        mkdir -p /sources/logs /sources/dags /sources/plugins
-        chown -R "${AIRFLOW_UID}:0" /sources/{logs,dags,plugins}
+        mkdir -p /sources/logs /sources/dags /sources/plugins /sources/dbt
+        chown -R "${AIRFLOW_UID}:0" /sources/{logs,dags,plugins,dbt}
         exec /entrypoint airflow version
-    networks:
-      - ndsnet
-
-  airflow-scheduler:
-    build:
-      context: .
-      dockerfile: ./airflow/Dockerfile
-    env_file:
-      - './.env'
-    volumes:
-      - ./airflow/dags:/opt/airflow/dags
-    command: airflow scheduler
     networks:
       - ndsnet
 

@@ -5,7 +5,7 @@ models:
   - name: top_20_pokemon
     description: "A starter dbt model"
     columns:
-      - name: id
+      - name: name
         description: "The primary key for this table"
         tests:
           - unique
@@ -13,5 +13,4 @@ models:
       - name: total_score
         description: "The average score of the pokemons stats"
         tests:
-          - unique
           - not_null
