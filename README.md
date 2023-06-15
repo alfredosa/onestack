@@ -6,7 +6,7 @@
 </p>
 <p align="center">
 <a href="https://github.com/alfredosa/onestack" target="_blank">
-    <img src="https://img.shields.io/github/stars/alfredosa/onestack?style=social&label=Star&maxAge=2592000" alt="Test">
+    <img src="https://img.shields.io/github/stars/alfredosa/onestack?style=social" alt="Test">
 </a>
 <a href="https://onestack.slack.com/" target="_blank">
     <img src="https://img.shields.io/badge/slack-join-white.svg?logo=slack" alt="Slack">
@@ -24,10 +24,6 @@
 One Stack is a powerful project that combines the capabilities of Airflow, dbt, Docker, Terraform, and GitHub Workflows. It provides a scalable and efficient solution for managing and orchestrating data workflows, running dbt transformations, and deploying infrastructure resources.
 
 This repository contains the necessary files and configurations to set up an end-to-end data engineering and deployment pipeline using popular tools and technologies.
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=alfredosa/onestack&type=Date)](https://star-history.com/#alfredosa/onestack&Date)
 
 ## Installation
 
