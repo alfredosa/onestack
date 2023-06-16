@@ -96,7 +96,10 @@ COPY conf/notebook ${BIN_DIR}/pyspark-notebook
 RUN chmod u+x ${SPARK_HOME}/* \
   && chmod u+x ${SPARK_HOME}/bin/* \
   && chmod u+x ${BIN_DIR}/notebook \
-  && chmod u+x ${BIN_DIR}/pyspark-notebook
+  && chmod u+x ${BIN_DIR}/pyspark-notebook \
+  && chmod +rx ${DBT_DIR}
+
+RUN chown -R root:root ${DBT_DIR}
 
 EXPOSE 3070
 EXPOSE 8888

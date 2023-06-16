@@ -10,8 +10,6 @@ ENV INSTALL_DIR=/tmp/install
 
 RUN mkdir -p ${TRINO_HOME} ${TRINO_DATA_DIR} ${DATA_STAGE_DIR} ${INSTALL_DIR}
 
-RUN apt-get install -y default-jdk
-
 # Install Java
 RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \

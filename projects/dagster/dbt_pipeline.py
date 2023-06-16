@@ -1,10 +1,10 @@
 from dagster import job, op
-
+import os
 from dagster_dbt import dbt_cli_resource
 
 def _dbt_run(context):
     pdir = context.op_config['project_dir']
-    context.log.info(f"elt: executing dbt run with project_dir: '{pdir}'")
+    context.log.info(f"elt: executing dbt run with project_dir: '{pdir}', working_dir: '{os.getcwd()}'")  # Add this line
     if 'select' in context.op_config:
         s = context.op_config['select']
         context.log.info(f"elt: executing dbt run with select: '{s}'")

@@ -1,12 +1,23 @@
+ops:
+  dbt_onestack_run_op:
+    inputs: {}
+    config:
+      project_dir: /var/lib/onestack/dbt/onestack
+  dbt_onestack_test_doc_sources_op:
+    config:
+      project_dir: /var/lib/onestack/dbt/onestack
 resources:
   dbt:
     config:
-      project_dir: ../dbt/onestack
-      profiles_dir: ../dbt
-ops:
-  dbt_onestack_run_op:
-    config:
-      project_dir: ../dbt/onestack
-  dbt_onestack_test_doc_sources_op:
-    config:
-      project_dir: ../dbt/onestack
+      bypass_cache: false
+      capture_logs: true
+      dbt_executable: dbt
+      debug: false
+      ignore_handled_error: false
+      json_log_format: true
+      project_dir: /var/lib/onestack/dbt/onestack
+      target_path: target
+      warn_error: false
+      profiles_dir: /var/lib/onestack/dbt
+
+  io_manager: {}
