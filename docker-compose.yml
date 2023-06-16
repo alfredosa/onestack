@@ -88,8 +88,6 @@ services:
     command:
       - -c
       - |
-        mkdir -p /sources/logs /sources/dags /sources/plugins /sources/dbt
-        chown -R "${AIRFLOW_UID}:0" /sources/{logs,dags,plugins,dbt}
         exec /entrypoint airflow version
     networks:
       - ndsnet
