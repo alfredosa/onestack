@@ -1,0 +1,49 @@
+version: 2
+
+models:
+  - name: pokemon_model
+    columns:
+      - name: name
+        description: The name of the Pokemon
+        tests:
+          - not_null
+      - name: "order"
+        description: The order of the Pokemon
+        tests:
+          - not_null
+      - name: base_experience
+        description: The base experience of the Pokemon
+        tests:
+          - not_null
+      - name: height
+        description: The height of the Pokemon
+        tests:
+          - not_null
+      - name: weight
+        description: The weight of the Pokemon
+        tests:
+          - not_null
+      - name: defense
+        description: The defense stat of the Pokemon
+        tests:
+          - not_null
+      - name: speed
+        description: The speed stat of the Pokemon
+        tests:
+          - not_null
+      - name: special_defense
+        description: The special defense stat of the Pokemon
+        tests:
+          - not_null
+      - name: attack
+        description: The attack stat of the Pokemon
+        tests:
+          - not_null
+      - name: special_attack
+        description: The special attack stat of the Pokemon
+        tests:
+          - not_null
+      - name: hp
+        description: The hit points (HP) stat of the Pokemon
+        tests:
+          - not_null

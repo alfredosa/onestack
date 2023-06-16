@@ -98,6 +98,33 @@ services:
       minio:
         condition: service_healthy
 
+  trino:
+      build: trino/
+      container_name: trino
+      volumes:
+        - ./data/stage:/var/lib/onestack/stage
+        - ./certs/trino.pass:/trino.pass
+        - ./certs/trino_key_and_cert.pem:/trino_key_and_cert.pem
+        - ./certs/trino_key.pem:/trino_key.pem
+        - ./certs/trino_cert.pem:/trino_cert.pem
+      ports:
+        - '8060:8060' # Trino
+        - '8063:8063' # Trino
+      networks:
+        onestack:
+          aliases:
+            - trino
+      depends_on:
+        postgres:
+          condition: service_healthy
+        minio:
+          condition: service_healthy
+      ulimits:
+        nproc: 65535
+        nofile:
+          soft: 20000
+          hard: 40000
+
   metabase:
     container_name: metabase
     depends_on:

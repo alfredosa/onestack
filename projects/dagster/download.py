@@ -49,8 +49,13 @@ def extract() -> list:
 def transform_and_download(pokemons: list, target_file):
     flattened_data, columns = flatten_stats(pokemons)
     df = pd.DataFrame(data=flattened_data, columns=columns)
-    df = df.sort_values(["base_experience"], ascending=False)
-    df.to_csv(target_file)
+    df = df.sort_values(["base_experience"], ascending=False).rename(
+        columns={
+            "special-defense": "special_defense",
+            "special-attack": "special_attack",
+        }
+    )
+    df.to_csv(target_file, index=False)
     return True
 
 

@@ -1,9 +1,9 @@
 
-name: 'onestack'
+name: 'silver'
 version: '1.0.0'
 config-version: 2
 
-profile: 'onestack'
+profile: 'spark'
 
 model-paths: ["models"]
 analysis-paths: ["analyses"]
@@ -12,13 +12,12 @@ seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
-clean-targets:         # directories to be removed by `dbt clean`
+target-path: "target"
+clean-targets:
   - "target"
   - "dbt_packages"
 
 models:
-  onestack:
-    pokemon:
-      +materialized: table
-    finance_yahoo:
-      +materialized: table
+  +materialized: table
+  +schema: silver    
+  +properties: {"format": "'ORC'", "using": "'ICEBERG'"}

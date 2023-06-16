@@ -8,11 +8,11 @@ ENV DAGSTER_HOME=/opt/dagster
 ENV KYUUBI_HOME=/opt/kyuubi
 ENV BIN_DIR=/usr/bin
 
-ENV DAGSTER_DIR=/var/lib/ngods/dagster
-ENV DBT_DIR=/var/lib/ngods/dbt
-ENV NOTEBOOKS_DIR=/var/lib/ngods/notebooks
-ENV DATA_STAGE_DIR=/var/lib/ngods/stage
-ENV HTML_DIR=/var/lib/ngods/html
+ENV DAGSTER_DIR=/var/lib/onestack/dagster
+ENV DBT_DIR=/var/lib/onestack/dbt
+ENV NOTEBOOKS_DIR=/var/lib/onestack/notebooks
+ENV DATA_STAGE_DIR=/var/lib/onestack/stage
+ENV HTML_DIR=/var/lib/onestack/html
 
 # Add iceberg spark runtime jar to IJava classpath
 ENV IJAVA_CLASSPATH=/opt/spark/jars/*
