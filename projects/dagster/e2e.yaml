@@ -8,7 +8,7 @@ resources:
       host: trino
       port: '8060'
       user: trino
-      password: ''      
+      password: ''
 ops:
   dbt_bronze_run_op:
     config:
@@ -28,10 +28,10 @@ ops:
   dbt_gold_test_doc_sources_op:
     config:
       project_dir: ../dbt/gold
-  download_yahoo_finance_files_op:  
-    config: 
-      target_file: /var/lib/ngods/stage/stocks.csv
-      symbols: 
+  download_yahoo_finance_files_op:
+    config:
+      target_file: /var/lib/onestack/stage/stocks.csv
+      symbols:
         - AAPL
         - GOOGL
         - ORCL
@@ -44,4 +44,3 @@ ops:
         - 'ETH-USD'
       start_date: '2000-01-01'
       end_date: 'yesterday'
-    

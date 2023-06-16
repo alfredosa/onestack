@@ -1,8 +1,11 @@
 ops:
+  download_pokemons_pokeapi:
+    config:
+      target_file_pokemon: "/var/lib/onestack/stage/pokemon.csv"
   download_yahoo_finance_files_op:
     config:
-      target_file_fin: /var/lib/onestack/stage/stocks.csv
-      target_file_pokemon: /var/lib/onestack/stage/pokemon.csv
+      end_date: 2022-06-30
+      start_date: 2000-01-01
       symbols:
         - AAPL
         - GOOGL
@@ -11,6 +14,5 @@ ops:
         - CRM
         - IBM
         - AMZN
-        - 'GC=F'
-      start_date: '2000-01-01'
-      end_date: '2022-06-30'
+        - GC=F
+      target_file_fin: /var/lib/onestack/stage/stocks.csv

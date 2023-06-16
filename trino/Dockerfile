@@ -10,6 +10,7 @@ ENV INSTALL_DIR=/tmp/install
 
 RUN mkdir -p ${TRINO_HOME} ${TRINO_DATA_DIR} ${DATA_STAGE_DIR} ${INSTALL_DIR}
 
+RUN apt-get install -y default-jdk
 
 # Install Java
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -19,7 +20,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN curl -L -o /tmp/openjdk.tar.gz https://download.java.net/java/GA/jdk17/0d483333a00540d886896bac774ff48b/35/GPL/openjdk-17_linux-x64_bin.tar.gz \
     && tar xvf /tmp/openjdk.tar.gz -C /opt/ \
     && rm /tmp/openjdk.tar.gz
-
 
 ENV JAVA_HOME=/opt/jdk-17
 ENV PATH=$PATH:$JAVA_HOME/bin

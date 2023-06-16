@@ -98,6 +98,6 @@ def download_pokemons_pokeapi(context, dependent_job=None):
 
 
 @job
-def download_yahoo_finance_files():
+def download_all_files():
     download_yahoo_finance_files_op()
     download_pokemons_pokeapi()

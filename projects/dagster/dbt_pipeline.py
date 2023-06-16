@@ -2,7 +2,6 @@ from dagster import job, op
 
 from dagster_dbt import dbt_cli_resource
 
-
 def _dbt_run(context):
     pdir = context.op_config['project_dir']
     context.log.info(f"elt: executing dbt run with project_dir: '{pdir}'")
@@ -45,61 +44,17 @@ def _dbt_source_freshness(context):
 
 
 @op(required_resource_keys={'dbt'})
-def dbt_bronze_run_op(context, dependent_job=None):
+def dbt_onestack_run_op(context, dependent_job=None):
     _dbt_run(context)
 
 @op(required_resource_keys={'dbt'})
-def dbt_bronze_test_doc_sources_op(context, dependent_job=None):
+def dbt_onestack_test_doc_sources_op(context, dependent_job=None):
     _dbt_test(context)
     _dbt_generate_docs(context)
     _dbt_source_freshness(context)
-
-
-@op(required_resource_keys={'dbt'})
-def dbt_silver_run_op(context, dependent_job=None):
-    _dbt_run(context)
-
-@op(required_resource_keys={'dbt'})
-def dbt_silver_test_doc_sources_op(context, dependent_job=None):
-    _dbt_test(context)
-    _dbt_generate_docs(context)
-    _dbt_source_freshness(context)
-
-
-@op(required_resource_keys={'dbt'})
-def dbt_gold_run_op(context, dependent_job=None):
-    _dbt_run(context)
-
-@op(required_resource_keys={'dbt'})
-def dbt_gold_test_doc_sources_op(context, dependent_job=None):
-    _dbt_test(context)
-    _dbt_generate_docs(context)
-    _dbt_source_freshness(context)
-
-
-@job(resource_defs={'dbt': dbt_cli_resource})
-def dbt_bronze():
-    dbt_bronze_test_doc_sources_op(dbt_bronze_run_op())
-
-
-@job(resource_defs={'dbt': dbt_cli_resource})
-def dbt_silver():
-    dbt_silver_test_doc_sources_op(dbt_silver_run_op())
-
-@job(resource_defs={'dbt': dbt_cli_resource})
-def dbt_gold():
-    dbt_gold_test_doc_sources_op(dbt_gold_run_op())
 
 @job(resource_defs={'dbt': dbt_cli_resource})
 def dbt_all():
-    dbt_gold_test_doc_sources_op(
-        dbt_gold_run_op(
-            dbt_silver_test_doc_sources_op(
-                dbt_silver_run_op(
-                    dbt_bronze_test_doc_sources_op(
-                        dbt_bronze_run_op()
-                    )
-                )
-            )
-        )
+    dbt_onestack_test_doc_sources_op(
+        dbt_onestack_run_op()
     )
