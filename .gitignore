@@ -1,6 +1,5 @@
 /.venv
 /.env
-/conf
 *.log
 
 # Byte-compiled / optimized / DLL files
