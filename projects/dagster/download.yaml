@@ -2,7 +2,7 @@ ops:
   download_yahoo_finance_files_op:
     config:
       target_file_fin: /var/lib/onestack/stage/stocks.csv
-      target_file_pokemon: /var/lib/onestack/stage/stocks.csv
+      target_file_pokemon: /var/lib/onestack/stage/pokemon.csv
       symbols:
         - AAPL
         - GOOGL

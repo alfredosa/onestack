@@ -33,6 +33,7 @@ yfinance = "^0.2.20"
 pmdarima = "^2.0.3"
 matplotlib = "^3.7.1"
 black = "^23.3.0"
+jupyter-client = "^8.2.0"
 
 
 [build-system]

@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM python:3.9-bullseye
+FROM python:3.10-bullseye
 
 ENV METASTORE_HADOOP_VERSION=3.2.0
 ENV METASTORE_VERSION=3.0.0
@@ -19,11 +19,11 @@ ENV IJAVA_CLASSPATH=/opt/spark/jars/*
 ENV PATH="/opt/spark/sbin:/opt/spark/bin:${PATH}"
 ENV INSTALL_DIR=/tmp/install
 
-RUN mkdir -p ${SPARK_HOME} ${MINIO_HOME}/bin ${DAGSTER_HOME}  ${KYUUBI_HOME} \ 
+RUN mkdir -p ${SPARK_HOME} ${MINIO_HOME}/bin ${DAGSTER_HOME}  ${KYUUBI_HOME} \
              ${DAGSTER_DIR} ${DBT_DIR} ${DATA_STAGE_DIR} ${NOTEBOOKS_DIR} ${INSTALL_DIR} ${HTML_DIR} \
             /root/.ipython/profile_default/startup
 
-# install core packages 
+# install core packages
 RUN apt-get update && apt-get upgrade -y && \
     apt-get install -y --no-install-recommends \
       sudo \
@@ -37,7 +37,7 @@ RUN apt-get update && apt-get upgrade -y && \
       gcc \
       g++ \
       libsasl2-dev \
-		  libsasl2-2\ 
+		  libsasl2-2\
 		  libsasl2-modules-gssapi-mit\
       unixodbc-dev \
       ssh \
@@ -76,12 +76,12 @@ RUN curl https://github.com/SpencerPark/IJava/releases/download/v1.3.0/ijava-1.3
     && rm awscliv2.zip \
     && rm -rf aws/ \
 # Download and install Kyuubi JDBC
-  && curl https://archive.apache.org/dist/incubator/kyuubi/kyuubi-1.6.1-incubating/apache-kyuubi-1.6.1-incubating-bin.tgz -Lo kyuubi.tgz \ 
+  && curl https://archive.apache.org/dist/incubator/kyuubi/kyuubi-1.6.1-incubating/apache-kyuubi-1.6.1-incubating-bin.tgz -Lo kyuubi.tgz \
     && tar xvzf kyuubi.tgz --directory ${KYUUBI_HOME} --strip-components 1 \
     && rm kyuubi.tgz \
 # Download and install Postgres deiver for Hive metastore
-  && curl https://repo1.maven.org/maven2/org/postgresql/postgresql/42.5.3/postgresql-42.5.3.jar -Lo pgsql.jar \ 
-    && mv pgsql.jar /opt/spark/jars 
+  && curl https://repo1.maven.org/maven2/org/postgresql/postgresql/42.5.3/postgresql-42.5.3.jar -Lo pgsql.jar \
+    && mv pgsql.jar /opt/spark/jars
 
 WORKDIR ${SPARK_HOME}
 
