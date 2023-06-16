@@ -1,6 +1,5 @@
 from airflow import DAG
 from airflow.operators.empty import EmptyOperator
-from cosmos.providers.dbt import DbtDag
 from cosmos.providers.dbt.task_group import DbtTaskGroup
 from pendulum import datetime
 
