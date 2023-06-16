@@ -3,7 +3,7 @@
 export JAVA_HOME="$(jrunscript -e 'java.lang.System.out.println(java.lang.System.getProperty("java.home"));')"
 export DAGSTER_HOME=/opt/dagster
 export KYUUBI_HOME=/opt/kyuubi
-export DAGSTER_DIR=/var/lib/ngods/dagster
+export DAGSTER_DIR=/var/lib/onestack/dagster
 
 
 # spark

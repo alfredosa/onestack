@@ -6,7 +6,6 @@ from airflow.operators.python import PythonOperator
 from airflow.providers.postgres.hooks.postgres import PostgresHook
 from airflow.utils.dates import days_ago
 
-
 with DAG(
     "pokemonsflow_dag",
     start_date=days_ago(1),

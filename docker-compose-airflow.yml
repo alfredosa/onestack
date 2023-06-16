@@ -32,7 +32,7 @@ services:
     ports:
       - '5431:5432'
     networks:
-      - ndsnet
+      - onestack
     volumes:
             - ./projects/postgres/docker_postgres_init.sql:/docker-entrypoint-initdb.d/docker_postgres_init.sql
     healthcheck:
@@ -52,7 +52,7 @@ services:
     ports:
       - 3030:3030
     networks:
-      - ndsnet
+      - onestack
 
   scheduler:
     <<: *common
@@ -63,7 +63,7 @@ services:
     ports:
       - "8793:8793"
     networks:
-      - ndsnet
+      - onestack
 
   webserver:
     <<: *common
@@ -79,7 +79,7 @@ services:
       timeout: 30s
       retries: 5
     networks:
-      - ndsnet
+      - onestack
 
   airflow-init:
     <<: *common
@@ -90,8 +90,8 @@ services:
       - |
         exec /entrypoint airflow version
     networks:
-      - ndsnet
+      - onestack
 
 networks:
-  ndsnet:
+  onestack:
     driver: bridge

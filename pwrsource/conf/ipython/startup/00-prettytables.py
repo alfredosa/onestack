@@ -1,5 +1,6 @@
-from prettytable import PrettyTable
 from IPython.core.magic import register_line_cell_magic
+from prettytable import PrettyTable
+
 
 class DFTable(PrettyTable):
     def __repr__(self):
@@ -35,6 +36,7 @@ def _to_table(df, num_rows=100):
 import re
 import sys
 from argparse import ArgumentParser
+
 parser = ArgumentParser()
 parser.add_argument("--limit", help="Number of lines to return", type=int, default=100)
 parser.add_argument("--var", help="Variable name to hold the dataframe", type=str)
