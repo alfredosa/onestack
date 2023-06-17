@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: pokemon_model
+  - name: pokemon
     columns:
       - name: name
         description: The name of the Pokemon

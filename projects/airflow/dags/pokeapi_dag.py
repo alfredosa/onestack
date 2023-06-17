@@ -5,6 +5,8 @@ from airflow.decorators import dag
 from airflow.operators.python import PythonOperator
 from airflow.providers.postgres.hooks.postgres import PostgresHook
 from airflow.utils.dates import days_ago
+from airflow.operators.empty import EmptyOperator
+from cosmos.providers.dbt.task_group import DbtTaskGroup
 
 with DAG(
     "pokemonsflow_dag",
@@ -97,5 +99,16 @@ with DAG(
         task_id="load",
         python_callable=load,
     )
+
+    dbt_tg = DbtTaskGroup(
+        dbt_root_path='/opt/airflow/dbt',
+        dbt_project_name="onestack",
+        conn_id="postgres",
+        profile_args={
+            "schema": "public",
+        },
+    )
+
+    e2 = EmptyOperator(task_id="post_dbt")
 
     extract_task >> transform_task >> load_task
